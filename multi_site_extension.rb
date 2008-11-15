@@ -22,6 +22,7 @@ class MultiSiteExtension < Radiant::Extension
     require_dependency 'application'
     
     Page.send :include, MultiSite::PageExtensions
+    Page.send :include, MultiSite::PageTags
     SiteController.send :include, MultiSite::SiteControllerExtensions
     Admin::PageController.send :include, MultiSite::PageControllerExtensions
     ResponseCache.send :include, MultiSite::ResponseCacheExtensions
